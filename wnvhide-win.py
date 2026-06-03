@@ -22,7 +22,6 @@ env_vars = [
     "TEMP",
     "TMP",
     "windir"
-
 ]
 
 # Build ENV Mapping Dictionary
