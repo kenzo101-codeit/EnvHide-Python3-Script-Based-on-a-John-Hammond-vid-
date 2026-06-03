@@ -3,6 +3,7 @@
 import os
 import string
 from pprint import pprint
+import random
 
 env_vars = [
     "PATH",
