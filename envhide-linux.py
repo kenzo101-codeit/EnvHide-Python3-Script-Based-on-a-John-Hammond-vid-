@@ -6,6 +6,12 @@ from pprint import pprint
 import random
 
 env_vars = [
+    "PATH",
+    "PWD",
+    "OLDPWD",
+    "SHLVL",
+    "TMPDIR",
+    "LD_LIBRARY_PATH",
     "SHELL",
     "HOSTNAME",
     "MANPATH",
