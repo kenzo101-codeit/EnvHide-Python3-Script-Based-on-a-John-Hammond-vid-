@@ -7,7 +7,6 @@ import random
 
 env_vars = [
     "ALLUSERSPROFILE",
-    "APPDATA",
     "CommonProgramFiles",
     "CommonProgramW6432",
     "ComSpec",
@@ -19,8 +18,6 @@ env_vars = [
     "PUBLIC",
     "SystemDrive",
     "SystemRoot",
-    "TEMP",
-    "TMP",
     "windir"
 ]
 
