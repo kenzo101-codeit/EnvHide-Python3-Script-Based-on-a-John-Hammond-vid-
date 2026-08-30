@@ -79,4 +79,4 @@ def powershell_obfuscate(string):
 
 pwsh_command = 'Write-Output 420'
 
-pprint(powershell_obfuscate(pwsh_command))
+print(powershell_obfuscate(pwsh_command))
