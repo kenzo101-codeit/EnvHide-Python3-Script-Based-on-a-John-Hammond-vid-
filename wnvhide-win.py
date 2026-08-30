@@ -70,13 +70,13 @@ def powershell_obfuscate(string):
     iex = envhide_obfuscate('iex')
     pieces = envhide_obfuscate(string)
     
-    iex_stage = f'& {"".join(iex)} -Join ${random.randint(1,99999)}'
+    iex_stage = f'{"".join(iex)} -Join ${random.randint(1,99999)}'
     
-    payload_stage = f'& {"".join(pieces)} -Join ${random.randint(1,99999)}'
+    payload_stage = f'{"".join(pieces)} -Join ${random.randint(1,99999)}'
     
     # old return f'& {iex} {payload} -Join ${random.randint(1,99999)}'
     return f'& {iex_stage} {payload_stage}'
 
 pwsh_command = 'Write-Output 420'
 
-pprint(envhide_obfuscate(pwsh_command))
+pprint(powershell_obfuscate(pwsh_command))
