@@ -2,7 +2,7 @@
 
 import os
 import string
-from pprint import pprint
+# from pprint import pprint
 import random
 
 env_vars = [
@@ -52,13 +52,13 @@ def envhide_obfuscate(string):
             continue
 
         chosen_var = random.choice(possible_vars)
-        possible_indices = env_mapping[chosen_var]
+        possible_indices = env_mapping[c][chosen_var]
         
         # print(f"{chosen_var=} {possible_indices=}")
         
         chosen_index =  random.choice(possible_indices)
         
-        new_character = os.getenv(chosen_var)[c][chosen_var][chosen_index]
+        new_character = os.getenv(chosen_var)[chosen_index]
         
         pwsh_syntax = f'$env:{chosen_var}[{chosen_index}]'
         
@@ -70,9 +70,9 @@ def powershell_obfuscate(string):
     iex = envhide_obfuscate('iex')
     pieces = envhide_obfuscate(string)
     
-    iex_stage = f'{"".join(iex)} -Join ${random.randint(1,99999)}'
+    iex_stage = f'({"".join(iex)} -Join ${random.randint(1,99999)})'
     
-    payload_stage = f'{"".join(pieces)} -Join ${random.randint(1,99999)}'
+    payload_stage = f'({"".join(pieces)} -Join ${random.randint(1,99999)})'
     
     # old return f'& {iex} {payload} -Join ${random.randint(1,99999)}'
     return f'& {iex_stage} {payload_stage}'
